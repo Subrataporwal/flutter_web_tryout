@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_web_course/widgets/top_navBar.dart';
 
 class LargeScreen extends StatelessWidget {
-  const LargeScreen({super.key});
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
+  LargeScreen(
+    Key? key,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +19,8 @@ class LargeScreen extends StatelessWidget {
         )),
         Expanded(
             flex: 5,
-            child: Container(
-              color: Colors.blueAccent,
+            child: Scaffold(
+              backgroundColor: Colors.blueAccent,
             ))
       ],
     );
