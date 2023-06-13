@@ -4,8 +4,8 @@ import 'package:flutter_web_course/routing/routes.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 
-class MenuController extends GetxController {
-  static MenuController instance = Get.find();
+class MenuCController extends GetxController {
+  static MenuCController instance = Get.find();
   var activeItem = overviewPageRoute.obs;
   var hoverItem = "".obs;
 

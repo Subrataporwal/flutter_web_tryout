@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web_course/controllers/menuController.dart';
+
 import 'package:flutter_web_course/layout.dart';
 import 'package:get/get.dart';
-import 'package:get/route_manager.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_strategy/url_strategy.dart';
 
+import 'controllers/menuController.dart';
+
 void main() {
   setPathUrlStrategy();
-  Get.put(MenuController());
+  Get.put(MenuCController());
   runApp(const MyApp());
 }
 
