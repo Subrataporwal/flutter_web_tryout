@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_course/widgets/sideMenu/side_menu.dart';
 
 class LargeScreen extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
@@ -13,6 +14,7 @@ class LargeScreen extends StatelessWidget {
         Expanded(
             child: Container(
           color: Colors.redAccent,
+          child: SideMenu(),
         )),
         const Expanded(
             flex: 5,

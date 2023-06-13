@@ -1,3 +1,5 @@
+// ignore_for_file: library_prefixes
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter_web_course/layout.dart';
@@ -6,11 +8,11 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_strategy/url_strategy.dart';
 
-import 'controllers/menuController.dart';
+import 'controllers/menuController.dart' as menuController;
 
 void main() {
   setPathUrlStrategy();
-  Get.put(MenuCController());
+  Get.put(menuController.MenuController());
   runApp(const MyApp());
 }
 

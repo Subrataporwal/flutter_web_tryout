@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_web_course/constants/styles.dart';
 import 'package:flutter_web_course/routing/routes.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:iconsax/iconsax.dart';
 
-class MenuCController extends GetxController {
-  static MenuCController instance = Get.find();
-  var activeItem = overviewPageRoute.obs;
-  var hoverItem = "".obs;
+class MenuController extends GetxController {
+  static MenuController instance = Get.find();
 
-  changeActiveItemTo(String itemName) {
+  var activeItem = myAppsDisplayName.obs;
+  var hoverItem = ''.obs;
+
+  chnageActiveItemTo(String itemName) {
     activeItem.value = itemName;
   }
 
@@ -17,38 +18,38 @@ class MenuCController extends GetxController {
     if (!isActive(itemName)) hoverItem.value = itemName;
   }
 
-  isActive(String itemName) {
-    activeItem.value == itemName;
-  }
-
-  isHovering(String itemName) {
-    hoverItem.value == itemName;
-  }
+  isActive(String itemName) => activeItem.value == itemName;
+  isHovering(String itemName) => hoverItem.value == itemName;
 
   Widget returnIconFor(String itemName) {
     switch (itemName) {
-      case overviewPageRoute:
-        return _customIcon(Icons.trending_up_rounded, itemName);
-      case driverPageRoute:
-        return _customIcon(Icons.drive_eta_rounded, itemName);
-      case clientsPageRoute:
-        return _customIcon(Icons.people_alt_rounded, itemName);
-      case authPageRoute:
-        return _customIcon(Icons.exit_to_app_rounded, itemName);
+      case myAppsDisplayName:
+        return _customIcon(Iconsax.category5, Iconsax.category, itemName);
+      case appCollectionsDisplayName:
+        return _customIcon(Iconsax.mobile5, Iconsax.mobile, itemName);
+      case resourcesDisplayName:
+        return _customIcon(Iconsax.note_text5, Iconsax.note_text, itemName);
+      case feedbackPageDisplayName:
+        return _customIcon(
+            Iconsax.message_text_15, Iconsax.message_text, itemName);
 
       default:
-        return _customIcon(Icons.exit_to_app_rounded, itemName);
+        return _customIcon(
+            Iconsax.message_text_15, Iconsax.message_text, itemName);
     }
   }
 
-  Widget _customIcon(IconData icon, String itemname) {
-    if (isActive(itemname)) {
+  Widget _customIcon(IconData iconBold, IconData icon, String itemName) {
+    if (isActive(itemName)) {
       return Icon(
-        icon,
-        size: 22,
-        color: dark,
+        iconBold,
+        // size: 22,
+        color: Primary.base,
       );
     }
-    return Icon(icon, color: isHovering(itemname) ? dark : lightGrey);
+    return Icon(
+      icon,
+      color: isHovering(itemName) ? Primary.base : Greyscale.k600,
+    );
   }
 }

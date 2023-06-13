@@ -1,3 +1,6 @@
-import 'package:flutter_web_course/controllers/menuController.dart';
+import 'package:flutter_web_course/controllers/navigation_controller.dart';
 
-MenuCController menuController = MenuCController.instance;
+import '../controllers/menuController.dart';
+
+MenuController menuController = MenuController.instance;
+NavigationController navigationController = NavigationController.instance;
